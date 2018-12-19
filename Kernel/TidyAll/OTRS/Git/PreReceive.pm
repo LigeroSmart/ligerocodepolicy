@@ -1,19 +1,19 @@
 # --
-# Copyright (C) 2001-2018 OTRS AG, https://otrs.com/
+# Copyright (C) 2018-2018 LIGERO AG, https://complemento.net.br/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (GPL). If you
 # did not receive this file, see https://www.gnu.org/licenses/gpl-3.0.txt.
 # --
 
-package TidyAll::OTRS::Git::PreReceive;
+package TidyAll::LIGERO::Git::PreReceive;
 
 use strict;
 use warnings;
 
 =head1 SYNOPSIS
 
-This pre receive hook loads the OTRS version of Code::TidyAll
+This pre receive hook loads the LIGERO version of Code::TidyAll
 with the custom plugins, executes it for any modified files
 and returns a corresponding status code.
 
@@ -26,30 +26,30 @@ use File::Basename;
 use Code::TidyAll;
 use IPC::System::Simple qw(capturex run);
 use Try::Tiny;
-use TidyAll::OTRS;
+use TidyAll::LIGERO;
 use Moo;
 
 # Ignore these repositories on the server so that we can always push to them.
 my %IgnoreRepositories = (
-    'otrscodepolicy.git' => 1,
+    'ligerocodepolicy.git' => 1,
 
     # auto-generated documentation
-    'otrs-github-io.git' => 1,
+    'ligero-github-io.git' => 1,
 
     # documentation toolchain
     'docbuild.git' => 1,
 
     # Thirdparty code
-    'bugs-otrs-org.git' => 1,
+    'bugs-ligero-org.git' => 1,
 
-    # OTRS Blog
-    'blog-otrs-com.git' => 1,
+    # LIGERO Blog
+    'blog-ligero-com.git' => 1,
 
-    # OTRS Blog
-    'www-otrs-com.git' => 1,
+    # LIGERO Blog
+    'www-ligero-com.git' => 1,
 
-    # OTRSTube
-    'clips-otrs-com.git' => 1,
+    # LIGEROTube
+    'clips-ligero-com.git' => 1,
 
     # Internal UX/UI team repository
     'ux-ui.git' => 1,
@@ -61,7 +61,7 @@ sub Run {
     my $ErrorMessage;
     try {
 
-        print "OTRSCodePolicy pre receive hook starting...\n";
+        print "LIGEROCodePolicy pre receive hook starting...\n";
 
         my $Input = $Param{Input};
         if ( !$Input ) {
@@ -159,10 +159,10 @@ sub HandleInput {
 sub CreateTidyAll {
     my ( $Self, $Commit, $FileList ) = @_;
 
-    # Find OTRSCodePolicy configuration
+    # Find LIGEROCodePolicy configuration
     my $ConfigFile = dirname(__FILE__) . '/../../tidyallrc';
 
-    my $TidyAll = TidyAll::OTRS->new_from_conf_file(
+    my $TidyAll = TidyAll::LIGERO->new_from_conf_file(
         $ConfigFile,
         check_only => 1,
         mode       => 'commit',
@@ -174,17 +174,17 @@ sub CreateTidyAll {
     #$TidyAll->GetFileListFromDirectory();
 
     # Set the list of files to be checked
-    @TidyAll::OTRS::FileList = @{$FileList};
+    @TidyAll::LIGERO::FileList = @{$FileList};
 
-    # Now we try to determine the OTRS version from the commit
+    # Now we try to determine the LIGERO version from the commit
 
     # Look for a RELEASE file first to determine the framework version
     if ( grep { $_ eq 'RELEASE' } @{$FileList} ) {
         my @Content = split /\n/, $Self->GetGitFileContents( 'RELEASE', $Commit );
 
         my ( $VersionMajor, $VersionMinor ) = $Content[1] =~ m{^VERSION\s+=\s+(\d+)\.(\d+)\.}xms;
-        $TidyAll::OTRS::FrameworkVersionMajor = $VersionMajor;
-        $TidyAll::OTRS::FrameworkVersionMinor = $VersionMinor;
+        $TidyAll::LIGERO::FrameworkVersionMajor = $VersionMajor;
+        $TidyAll::LIGERO::FrameworkVersionMinor = $VersionMinor;
     }
 
     # Look for any SOPM files
@@ -199,19 +199,19 @@ sub CreateTidyAll {
                         my ( $VersionMajor, $VersionMinor )
                             = $Line =~ m{ <Framework (?: [ ]+ [^<>]* )? > (\d+) \. (\d+) \. [^<*]+ <\/Framework> }xms;
                         if (
-                            $VersionMajor > $TidyAll::OTRS::FrameworkVersionMajor
+                            $VersionMajor > $TidyAll::LIGERO::FrameworkVersionMajor
                             || (
-                                $VersionMajor == $TidyAll::OTRS::FrameworkVersionMajor
-                                && $VersionMinor > $TidyAll::OTRS::FrameworkVersionMinor
+                                $VersionMajor == $TidyAll::LIGERO::FrameworkVersionMajor
+                                && $VersionMinor > $TidyAll::LIGERO::FrameworkVersionMinor
                             )
                             )
                         {
-                            $TidyAll::OTRS::FrameworkVersionMajor = $VersionMajor;
-                            $TidyAll::OTRS::FrameworkVersionMinor = $VersionMinor;
+                            $TidyAll::LIGERO::FrameworkVersionMajor = $VersionMajor;
+                            $TidyAll::LIGERO::FrameworkVersionMinor = $VersionMinor;
                         }
                     }
-                    elsif ( $Line =~ m{<Vendor>} && $Line !~ m{OTRS} ) {
-                        $TidyAll::OTRS::ThirdpartyModule = 1;
+                    elsif ( $Line =~ m{<Vendor>} && $Line !~ m{LIGERO} ) {
+                        $TidyAll::LIGERO::ThirdpartyModule = 1;
                     }
                 }
 
@@ -220,21 +220,21 @@ sub CreateTidyAll {
         }
     }
 
-    if ($TidyAll::OTRS::FrameworkVersionMajor) {
+    if ($TidyAll::LIGERO::FrameworkVersionMajor) {
         print
-            "Found OTRS version $TidyAll::OTRS::FrameworkVersionMajor.$TidyAll::OTRS::FrameworkVersionMinor\n";
+            "Found LIGERO version $TidyAll::LIGERO::FrameworkVersionMajor.$TidyAll::LIGERO::FrameworkVersionMinor\n";
     }
     else {
-        print "Could not determine OTRS version (assuming latest version)!\n";
+        print "Could not determine LIGERO version (assuming latest version)!\n";
     }
 
-    if ($TidyAll::OTRS::ThirdpartyModule) {
+    if ($TidyAll::LIGERO::ThirdpartyModule) {
         print
-            "This seems to be a module not copyrighted by OTRS AG. File copyright will not be changed.\n";
+            "This seems to be a module not copyrighted by LIGERO AG. File copyright will not be changed.\n";
     }
     else {
         print
-            "This module seems to be copyrighted by OTRS AG. File copyright will automatically be assigned to OTRS AG.\n";
+            "This module seems to be copyrighted by LIGERO AG. File copyright will automatically be assigned to LIGERO AG.\n";
         print
             "  If this is not correct, you can change the <Vendor> tag in your SOPM.\n";
     }

@@ -1,6 +1,6 @@
 Active: 1
 
 PlatformSets:
- - ondemand-otrs8
+ - ondemand-ligero8
 
-DeployOTRSBranch: master
+DeployLIGEROBranch: master

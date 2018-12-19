@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 # --
-# Copyright (C) 2001-2018 OTRS AG, https://otrs.com/
+# Copyright (C) 2018-2018 LIGERO AG, https://complemento.net.br/
 # --
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ use IPC::System::Simple qw(capturex);
 use POSIX ":sys_wait_h";
 use Time::HiRes qw(sleep);
 
-use TidyAll::OTRS;
+use TidyAll::LIGERO;
 
 my ( $Verbose, $Directory, $File, $Mode, $Cached, $All, $Help, $Processes );
 GetOptions(
@@ -52,9 +52,9 @@ GetOptions(
 
 if ($Help) {
     print <<EOF;
-Usage: OTRSCodePolicy/bin/otrs.CodePolicy.pl [options]
+Usage: LIGEROCodePolicy/bin/ligero.CodePolicy.pl [options]
 
-    Performs OTRS code policy checks. Run this script from the toplevel directory
+    Performs LIGERO code policy checks. Run this script from the toplevel directory
     of your module. By default it will only process files which are staged for
     git commit. Use --all or --directory to check all files or just one directory
     instead.
@@ -74,7 +74,7 @@ EOF
 
 my $ConfigurationFile = dirname($0) . '/../Kernel/TidyAll/tidyallrc';
 
-# Change to otrs-code-policy directory to be able to load all plugins.
+# Change to ligero-code-policy directory to be able to load all plugins.
 my $RootDir = getcwd();
 
 if ( !defined $Processes ) {
@@ -86,7 +86,7 @@ if ( $All && $Processes ) {
 }
 
 # To store results from child processes.
-my $TempDirectory = dirname($0) . '/../var/tmp/OTRSCodePolicy/';
+my $TempDirectory = dirname($0) . '/../var/tmp/LIGEROCodePolicy/';
 
 if ( !-e $TempDirectory ) {
 
@@ -157,7 +157,7 @@ elsif ( !$All ) {
 
 chdir dirname($0) . "/..";
 
-my $TidyAll = TidyAll::OTRS->new_from_conf_file(
+my $TidyAll = TidyAll::LIGERO->new_from_conf_file(
     $ConfigurationFile,
     check_only => 0,
     mode       => $Mode // 'cli',

@@ -1,19 +1,19 @@
 # --
-# Copyright (C) 2001-2018 OTRS AG, https://otrs.com/
+# Copyright (C) 2018-2018 LIGERO AG, https://complemento.net.br/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (GPL). If you
 # did not receive this file, see https://www.gnu.org/licenses/gpl-3.0.txt.
 # --
 
-package TidyAll::OTRS::Git::PreCommit;
+package TidyAll::LIGERO::Git::PreCommit;
 
 use strict;
 use warnings;
 
 =head1 SYNOPSIS
 
-This commit hook loads the OTRS version of Code::TidyAll
+This commit hook loads the LIGERO version of Code::TidyAll
 with the custom plugins, executes it for any modified files
 and returns a corresponding status code.
 
@@ -26,13 +26,13 @@ use File::Basename;
 use Code::TidyAll;
 use IPC::System::Simple qw(capturex run);
 use Try::Tiny;
-use TidyAll::OTRS;
+use TidyAll::LIGERO;
 use Moo;
 
 sub Run {
     my $Self = @_;
 
-    print "OTRSCodePolicy commit hook starting...\n";
+    print "LIGEROCodePolicy commit hook starting...\n";
 
     my $ErrorMessage;
 
@@ -49,7 +49,7 @@ sub Run {
         push @ChangedFiles, grep { -f && !-l } ( $Output =~ /^\s*RM?+\s+(.*?)\s+->\s+(.*)/gm );
         return if !@ChangedFiles;
 
-        # Find OTRSCodePolicy configuration
+        # Find LIGEROCodePolicy configuration
         my $ScriptDirectory;
         if ( -l $0 ) {
             $ScriptDirectory = dirname( readlink($0) );
@@ -59,10 +59,10 @@ sub Run {
         }
         my $ConfigFile = $ScriptDirectory . '/../tidyallrc';
 
-        # Change to otrs-code-policy directory to be able to load all plugins.
+        # Change to ligero-code-policy directory to be able to load all plugins.
         chdir $ScriptDirectory . '/../../';
 
-        my $TidyAll = TidyAll::OTRS->new_from_conf_file(
+        my $TidyAll = TidyAll::LIGERO->new_from_conf_file(
             $ConfigFile,
             check_only => 1,
             mode       => 'commit',

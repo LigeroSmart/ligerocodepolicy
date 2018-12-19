@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 # --
-# Copyright (C) 2001-2018 OTRS AG, https://otrs.com/
+# Copyright (C) 2018-2018 LIGERO AG, https://complemento.net.br/
 # --
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,12 +27,12 @@ This hook inserts a custom prepared commit message into the git commit message.
 
 =cut
 
-my $OTRSCommitTemplateFile = '.git/OTRSCommitTemplate.msg';
+my $LIGEROCommitTemplateFile = '.git/LIGEROCommitTemplate.msg';
 
-if ( -r $OTRSCommitTemplateFile ) {
+if ( -r $LIGEROCommitTemplateFile ) {
 
     # Get our content and prepend it
-    my $FileHandle = IO::File->new( $OTRSCommitTemplateFile, 'r' );
+    my $FileHandle = IO::File->new( $LIGEROCommitTemplateFile, 'r' );
     my @Content    = $FileHandle->getlines();
 
     # Get the pre-populated file from GIT and keep its contents
@@ -45,5 +45,5 @@ if ( -r $OTRSCommitTemplateFile ) {
     $FileHandle->print( join "", @Content );
 
     # Remove custom commit message template
-    unlink $OTRSCommitTemplateFile;
+    unlink $LIGEROCommitTemplateFile;
 }

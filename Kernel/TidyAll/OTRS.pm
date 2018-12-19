@@ -1,12 +1,12 @@
 # --
-# Copyright (C) 2001-2018 OTRS AG, https://otrs.com/
+# Copyright (C) 2018-2018 LIGERO AG, https://complemento.net.br/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (GPL). If you
 # did not receive this file, see https://www.gnu.org/licenses/gpl-3.0.txt.
 # --
 
-package TidyAll::OTRS;
+package TidyAll::LIGERO;
 
 use strict;
 use warnings;
@@ -46,7 +46,7 @@ sub new_from_conf_file {            ## no critic
 sub DetermineFrameworkVersionFromDirectory {
     my ( $Self, %Param ) = @_;
 
-    # First check if we have an OTRS directory, use RELEASE info then.
+    # First check if we have an LIGERO directory, use RELEASE info then.
     if ( -r $Self->{root_dir} . '/RELEASE' ) {
         my $FileHandle = IO::File->new( $Self->{root_dir} . '/RELEASE', 'r' );
         my @Content    = $FileHandle->getlines();
@@ -79,7 +79,7 @@ sub DetermineFrameworkVersionFromDirectory {
                         $FrameworkVersionMinor = $VersionMinor;
                     }
                 }
-                elsif ( $Line =~ m{<Vendor>} && $Line !~ m{OTRS} ) {
+                elsif ( $Line =~ m{<Vendor>} && $Line !~ m{LIGERO} ) {
                     $ThirdpartyModule = 1;
                 }
             }
@@ -87,19 +87,19 @@ sub DetermineFrameworkVersionFromDirectory {
     }
 
     if ($FrameworkVersionMajor) {
-        print "Found OTRS version $FrameworkVersionMajor.$FrameworkVersionMinor.\n";
+        print "Found LIGERO version $FrameworkVersionMajor.$FrameworkVersionMinor.\n";
     }
     else {
-        print "Could not determine OTRS version (assuming latest version)!\n";
+        print "Could not determine LIGERO version (assuming latest version)!\n";
     }
 
     if ($ThirdpartyModule) {
         print
-            "This seems to be a module not copyrighted by OTRS AG. File copyright will not be changed.\n";
+            "This seems to be a module not copyrighted by LIGERO AG. File copyright will not be changed.\n";
     }
     else {
         print
-            "This module seems to be copyrighted by OTRS AG. File copyright will automatically be assigned to OTRS AG.\n";
+            "This module seems to be copyrighted by LIGERO AG. File copyright will automatically be assigned to LIGERO AG.\n";
         print
             "  If this is not correct, you can change the <Vendor> tag in your SOPM.\n";
     }
