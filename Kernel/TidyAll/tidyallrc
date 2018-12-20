@@ -24,79 +24,79 @@ ignore = var/public/dist/**/*
 ; Common
 ;
 
-[+TidyAll::Plugin::OTRS::Common::CRLFLineEndings]
+[+TidyAll::Plugin::LIGERO::Common::CRLFLineEndings]
 select = **/*.{pl,pm,psgi,t,dtl,tt,spec,js,css,scss,vue,dist,tmpl,sh,skel,xml,sopm,html}
 
-[+TidyAll::Plugin::OTRS::Common::NoFilter]
+[+TidyAll::Plugin::LIGERO::Common::NoFilter]
 select = **/*.{pl,pm,psgi,t,dtl,tt,spec,js,css,scss,vue,dist,tmpl,sh,skel,xml,sopm,html}
 
-[+TidyAll::Plugin::OTRS::Common::Origin]
+[+TidyAll::Plugin::LIGERO::Common::Origin]
 select = **/*.{pl,psgi,pm,t,js,dtl,css,tt,xml,sopm}
 ignore = Kernel/Config/Files/ZZZ*.pm
 ; Ignore docbook documentations
 ignore = */content/**/*.xml
 
-[+TidyAll::Plugin::OTRS::Common::CustomizationMarkersTT]
+[+TidyAll::Plugin::LIGERO::Common::CustomizationMarkersTT]
 select = Custom/Kernel/Output/HTML/**/*.tt
 select = Kernel/Output/HTML/**/*.tt
 
-[+TidyAll::Plugin::OTRS::Common::CustomizationMarkers]
+[+TidyAll::Plugin::LIGERO::Common::CustomizationMarkers]
 select = **/*.{pl,psgi,pm,t,js,dtl,css,tt}
 ignore = Kernel/Config.pm
 ignore = Kernel/Config/GenericAgent.pm
 ignore = Kernel/Config/Files/ZZZ*.pm
 
-[+TidyAll::Plugin::OTRS::XML::Docbook::ReplaceSupportEmail]
+[+TidyAll::Plugin::LIGERO::XML::Docbook::ReplaceSupportEmail]
 select = doc/**/*.xml
 
-[+TidyAll::Plugin::OTRS::XML::Docbook::RemoveContactChapter]
+[+TidyAll::Plugin::LIGERO::XML::Docbook::RemoveContactChapter]
 select = doc/**/*.xml
 
-[+TidyAll::Plugin::OTRS::Common::ProhibitEmailAddresses]
+[+TidyAll::Plugin::LIGERO::Common::ProhibitEmailAddresses]
 select = **/*.{pl,pm,psgi,t,dtl,tt,js,xml,sopm}
 
-;[+TidyAll::Plugin::OTRS::Common::TranslatableStringsSpellCheck]
+;[+TidyAll::Plugin::LIGERO::Common::TranslatableStringsSpellCheck]
 ;select = **/*.{pl,pm,tt,js,xml}
 
-[+TidyAll::Plugin::OTRS::Common::RemoveCVSIDs]
+[+TidyAll::Plugin::LIGERO::Common::RemoveCVSIDs]
 select = **/*.{pl,pm,psgi,t,xml,dtl,tt,dist,spec,js}
 select = var/cron/*
 
-[+TidyAll::Plugin::OTRS::Common::ValidateFilename]
+[+TidyAll::Plugin::LIGERO::Common::ValidateFilename]
 select = *
 
 ;
 ; Cron
 ;
 
-[+TidyAll::Plugin::OTRS::Cron::CronScripts]
+[+TidyAll::Plugin::LIGERO::Cron::CronScripts]
 select = var/cron/*.dist
 
 ;
 ; DTL
 ;
 
-[+TidyAll::Plugin::OTRS::DTL::Baselink]
+[+TidyAll::Plugin::LIGERO::DTL::Baselink]
 select = **/*.dtl
 ignore = scripts/test/sample/**/*
 
-[+TidyAll::Plugin::OTRS::DTL::CGIHandle]
+[+TidyAll::Plugin::LIGERO::DTL::CGIHandle]
 select = **/*.dtl
 ignore = scripts/test/sample/**/*
 
-[+TidyAll::Plugin::OTRS::DTL::Format]
+[+TidyAll::Plugin::LIGERO::DTL::Format]
 select = **/*.dtl
 ignore = scripts/test/sample/**/*
 
-[+TidyAll::Plugin::OTRS::DTL::LQData]
+[+TidyAll::Plugin::LIGERO::DTL::LQData]
 select = **/*.dtl
 ignore = scripts/test/sample/**/*
 
-[+TidyAll::Plugin::OTRS::DTL::Select]
+[+TidyAll::Plugin::LIGERO::DTL::Select]
 select = **/*.dtl
 ignore = scripts/test/sample/**/*
 
-[+TidyAll::Plugin::OTRS::DTL::UniqueBlock]
+[+TidyAll::Plugin::LIGERO::DTL::UniqueBlock]
 select = **/*.dtl
 ignore = scripts/test/sample/**/*
 
@@ -104,21 +104,21 @@ ignore = scripts/test/sample/**/*
 ; JavaScript
 ;
 
-[+TidyAll::Plugin::OTRS::JavaScript::DebugCode]
+[+TidyAll::Plugin::LIGERO::JavaScript::DebugCode]
 select = **/*.js
 ignore = scripts/webpack/**/*
 
-[+TidyAll::Plugin::OTRS::JavaScript::UnloadEvent]
+[+TidyAll::Plugin::LIGERO::JavaScript::UnloadEvent]
 select = **/*.js **/*.tt
 
-[+TidyAll::Plugin::OTRS::JavaScript::FileName]
+[+TidyAll::Plugin::LIGERO::JavaScript::FileName]
 select = **/*.js
 ignore = **/test/*
 
-[+TidyAll::Plugin::OTRS::JavaScript::FileNameUnitTest]
+[+TidyAll::Plugin::LIGERO::JavaScript::FileNameUnitTest]
 select = var/httpd/htdocs/js/test/*.js
 
-[+TidyAll::Plugin::OTRS::JavaScript::ESLint]
+[+TidyAll::Plugin::LIGERO::JavaScript::ESLint]
 select = **/*.{js,vue}
 ignore = scripts/test/sample/Loader/**/*
 
@@ -126,10 +126,10 @@ ignore = scripts/test/sample/Loader/**/*
 ; Legal
 ;
 
-[+TidyAll::Plugin::OTRS::Legal::AddressUpdate]
+[+TidyAll::Plugin::LIGERO::Legal::AddressUpdate]
 select = doc/**/*.xml
 
-[+TidyAll::Plugin::OTRS::Legal::LicenseValidator]
+[+TidyAll::Plugin::LIGERO::Legal::LicenseValidator]
 select = **/*.{pl,pm,psgi,t,dtl,tt,spec,js,css,scss,vue,dist,sh,skel,xml,sopm}
 ignore = COPYING RELEASE CREDITS
 ignore = Kernel/Config.pm Kernel/Config/**/ZZZ*.pm Kernel/Config/Files/User/*.pm
@@ -139,69 +139,69 @@ ignore = scripts/test/sample/Loader/*.min.{css,js}
 ignore = scripts/test/sample/SysConfig/Migration/**/ZZZ*.pm
 ignore = scripts/DBUpdateTo6/TaskConfig/MigrateArticleData.yml.dist
 ignore = var/httpd/htdocs/common/**/*.css
-; OTRSContinuousIntegrationProvisioner - deployment template includes
+; LIGEROContinuousIntegrationProvisioner - deployment template includes
 ignore = **/*.tt.sh
 
-[+TidyAll::Plugin::OTRS::Legal::ReplaceCopyright]
+[+TidyAll::Plugin::LIGERO::Legal::ReplaceCopyright]
 select = **/*.{pl,pm,psgi,t,dtl,tt,spec,js,css,scss,vue,dist,tmpl,sh,skel,xml,sopm,html}
 select = .*.dist .bash_completion
 select = var/cron/*
 ignore = Kernel/Config.pm Kernel/Config/**/ZZZ*.pm
-ignore = module-format.xml,codesyntax.xml,language-translations.xml,writing-otrs-application.xml,test-mechanism.xml
+ignore = module-format.xml,codesyntax.xml,language-translations.xml,writing-ligero-application.xml,test-mechanism.xml
 ; Don't run this in the CI to avoid updates on year changes. It is enough to update the code when it is changed.
 only_modes = cli editor commit
 
-[+TidyAll::Plugin::OTRS::Legal::SOPMLicense]
+[+TidyAll::Plugin::LIGERO::Legal::SOPMLicense]
 select = *.{opm,sopm}
 
 ;
 ; POT/PO
 ;
 
-[+TidyAll::Plugin::OTRS::PO::Lint]
+[+TidyAll::Plugin::LIGERO::PO::Lint]
 select = i18n/**/*.{pot,po}
 
-[+TidyAll::Plugin::OTRS::PO::msgfmt]
+[+TidyAll::Plugin::LIGERO::PO::msgfmt]
 select = i18n/**/*.{pot,po}
 
 ;
 ; Perl
 ;
 
-[+TidyAll::Plugin::OTRS::Perl::BinScripts]
+[+TidyAll::Plugin::LIGERO::Perl::BinScripts]
 select = bin/*.pl
 
-[+TidyAll::Plugin::OTRS::Perl::CacheNew]
+[+TidyAll::Plugin::LIGERO::Perl::CacheNew]
 select = **/*.{pl,psgi,pm}
 select = Kernel/Config.pm.dist
 
-[+TidyAll::Plugin::OTRS::Perl::DBObject]
+[+TidyAll::Plugin::LIGERO::Perl::DBObject]
 select = Kernel/Modules/**/*.pm Custom/Kernel/Modules/**/*.pm
 
-[+TidyAll::Plugin::OTRS::Perl::DieExit]
+[+TidyAll::Plugin::LIGERO::Perl::DieExit]
 select = Kernel/Modules/**/*.pm Custom/Kernel/Modules/**/*.pm
 
-[+TidyAll::Plugin::OTRS::Perl::Dumper]
+[+TidyAll::Plugin::LIGERO::Perl::Dumper]
 select = **/*.{pl,pm,psgi}
 select = Kernel/Config.pm.dist
 
-[+TidyAll::Plugin::OTRS::Perl::ForeachToFor]
+[+TidyAll::Plugin::LIGERO::Perl::ForeachToFor]
 select = **/*.{pl,pm,psgi,t}
 select = Kernel/Config.pm.dist
 
-[+TidyAll::Plugin::OTRS::Perl::ForMy]
+[+TidyAll::Plugin::LIGERO::Perl::ForMy]
 select = **/*.{pl,psgi,pm,t}
 select = Kernel/Config.pm.dist
 
-[+TidyAll::Plugin::OTRS::Perl::Goto]
+[+TidyAll::Plugin::LIGERO::Perl::Goto]
 select = **/*.{pl,psgi,pm,t}
 select = Kernel/Config.pm.dist
 
-[+TidyAll::Plugin::OTRS::Perl::ISA]
+[+TidyAll::Plugin::LIGERO::Perl::ISA]
 select = **/*.{pl,pm,psgi,t}
 select = Kernel/Config.pm.dist
 
-[+TidyAll::Plugin::OTRS::Perl::LayoutObject]
+[+TidyAll::Plugin::LIGERO::Perl::LayoutObject]
 select = **/*.{pl,pm,psgi,t}
 select = Kernel/Config.pm.dist
 ignore = scripts/test/**/*
@@ -209,33 +209,33 @@ ignore = Kernel/{Modules,Output}/**/* Custom/Kernel/{Modules,Output}/**/*
 ignore = Kernel/System/Web/* Custom/Kernel/System/Web/*
 ignore = Kernel/System/DynamicField/**/* Custom/Kernel/System/DynamicField/**/*
 
-[+TidyAll::Plugin::OTRS::Perl::ModuleFormat]
+[+TidyAll::Plugin::LIGERO::Perl::ModuleFormat]
 select = **/*.{pm,t}
 select = Kernel/Config.pm.dist
 
-[+TidyAll::Plugin::OTRS::Perl::NoExitInConsoleCommands]
+[+TidyAll::Plugin::LIGERO::Perl::NoExitInConsoleCommands]
 select = Kernel/System/Console/Command/**/*.pm Custom/Kernel/System/Console/Command/**/*.pm
 
-[+TidyAll::Plugin::OTRS::Perl::ObjectDependencies]
+[+TidyAll::Plugin::LIGERO::Perl::ObjectDependencies]
 select = **/*.{pm}
 select = Kernel/Config.pm.dist
 
-[+TidyAll::Plugin::OTRS::Perl::ObjectManagerCreation]
+[+TidyAll::Plugin::LIGERO::Perl::ObjectManagerCreation]
 select = **/*.{pm}
 select = Kernel/Config.pm.dist
 
-[+TidyAll::Plugin::OTRS::Perl::ObjectNameSpace]
+[+TidyAll::Plugin::LIGERO::Perl::ObjectNameSpace]
 select = **/*.{pl,pm,t}
 select = Kernel/Config.pm.dist
 ignore = Kernel/Modules/**/* Custom/Kernel/Modules/**/*
 
-[+TidyAll::Plugin::OTRS::Perl::ParamObject]
+[+TidyAll::Plugin::LIGERO::Perl::ParamObject]
 select = **/*.{pl,psgi}
 select = Kernel/System/**/*.pm Custom/Kernel/System/**/*.pm
 ignore = Kernel/System/Web/* Custom/Kernel/System/Web/*
 ignore = Kernel/System/DynamicField/**/* Custom/Kernel/System/DynamicField/**/*
 
-[+TidyAll::Plugin::OTRS::Perl::PerlCritic]
+[+TidyAll::Plugin::LIGERO::Perl::PerlCritic]
 select = **/*.{pl,pm,psgi,t}
 ignore = Kernel/Config.pm
 ignore = Kernel/Language/*.pm Custom/Kernel/Language/*.pm
@@ -243,153 +243,153 @@ ignore = scripts/test/sample/**/*
 ; do not run for commits to save time
 only_modes = cli tests
 
-[+TidyAll::Plugin::OTRS::Perl::PerlTidy]
+[+TidyAll::Plugin::LIGERO::Perl::PerlTidy]
 select = **/*.{pl,pm,psgi,t}
 ignore = Kernel/Config.pm Kernel/Config/Defaults.pm Kernel/Config/**/ZZZ*.pm
 ignore = Kernel/Language/*.pm Custom/Kernel/Language/*.pm
 argv = -l=120 -i=4 -ci=4 -vt=0 -vtc=0 -cti=0 -pt=1 -bt=1 -sbt=1 -bbt=1 -nsfs -nolq -bbao -nola -ndnl -cab=0
 ; do not run for commits to save time
-; do not run on the UnitTests to save time (needs ~ 5 min for OTRS)
+; do not run on the UnitTests to save time (needs ~ 5 min for LIGERO)
 only_modes = cli
 
-[+TidyAll::Plugin::OTRS::Perl::Pod::FunctionPod]
+[+TidyAll::Plugin::LIGERO::Perl::Pod::FunctionPod]
 select = **/*.{pm}
 
-[+TidyAll::Plugin::OTRS::Perl::Pod::NamePod]
+[+TidyAll::Plugin::LIGERO::Perl::Pod::NamePod]
 select = **/*.{pm}
 
-[+TidyAll::Plugin::OTRS::Perl::Pod::SpellCheck]
+[+TidyAll::Plugin::LIGERO::Perl::Pod::SpellCheck]
 select = **/*.{pm,pod}
 
-[+TidyAll::Plugin::OTRS::Perl::Pod::Validator]
+[+TidyAll::Plugin::LIGERO::Perl::Pod::Validator]
 select = **/*.{pm,pod,pod.dist}
 
-[+TidyAll::Plugin::OTRS::Perl::Print]
+[+TidyAll::Plugin::LIGERO::Perl::Print]
 select = Kernel/Modules/**/*.pm Custom/Kernel/Modules/**/*.pm
 
 ; $Kernel::OM must not be used in the base WebApp infrastructure, only
 ;   in controllers, controller utility packages and the plugin
 ;   providing Kernel::OM to the controllers.
-[+TidyAll::Plugin::OTRS::Perl::ProhibitObjectManager]
+[+TidyAll::Plugin::LIGERO::Perl::ProhibitObjectManager]
 select = Kernel/WebApp.pm
 select = Kernel/WebApp/*.pm
 ignore = Kernel/WebApp/Plugin/**/*.pm
 ignore = Kernel/WebApp/Plugin/*ProvideObjectManager.pm
 
-[+TidyAll::Plugin::OTRS::Perl::ProhibitMojoJSON]
+[+TidyAll::Plugin::LIGERO::Perl::ProhibitMojoJSON]
 select = **/*.{pm}
 
-[+TidyAll::Plugin::OTRS::Perl::Require]
+[+TidyAll::Plugin::LIGERO::Perl::Require]
 select = **/*.{pl,psgi,pm,t}
 select = Kernel/Config.pm.dist
 ignore = scripts/test/Selenium/**/*.t
 
-[+TidyAll::Plugin::OTRS::Perl::ScriptFormat]
+[+TidyAll::Plugin::LIGERO::Perl::ScriptFormat]
 select = **/*.{pl,psgi}
 
-[+TidyAll::Plugin::OTRS::Perl::SortKeys]
+[+TidyAll::Plugin::LIGERO::Perl::SortKeys]
 select = **/*.{pl,pm,psgi,t}
 select = Kernel/Config.pm.dist
 
-[+TidyAll::Plugin::OTRS::Perl::SubDeclaration]
+[+TidyAll::Plugin::LIGERO::Perl::SubDeclaration]
 select = **/*.{pl,pm,psgi,t}
 select = Kernel/Config.pm.dist
 
-[+TidyAll::Plugin::OTRS::Perl::SyntaxCheck]
+[+TidyAll::Plugin::LIGERO::Perl::SyntaxCheck]
 select = **/*.{pl,pm,psgi,t}
 select = Kernel/Config.pm.dist
 
-[+TidyAll::Plugin::OTRS::Perl::TestSubs]
+[+TidyAll::Plugin::LIGERO::Perl::TestSubs]
 select = **/*.{t}
 
-[+TidyAll::Plugin::OTRS::Perl::Time]
+[+TidyAll::Plugin::LIGERO::Perl::Time]
 select = **/*.{pl,pm,psgi,t}
 select = Kernel/Config.pm.dist
 ignore = scripts/test/**/*
 
-[+TidyAll::Plugin::OTRS::Perl::Translatable]
+[+TidyAll::Plugin::LIGERO::Perl::Translatable]
 select = **/*.{pl,pm,psgi,t}
 ignore = Kernel/Config.pm Kernel/Config/**/ZZZ*.pm
 ignore = Kernel/Language.pm
 ignore = scripts/test/**/*
 
-[+TidyAll::Plugin::OTRS::Perl::TranslationEncoding]
+[+TidyAll::Plugin::LIGERO::Perl::TranslationEncoding]
 select = Kernel/Language/*.pm Custom/Kernel/Language/*.pm
 
-[+TidyAll::Plugin::OTRS::Perl::UnitTestConfigChanges]
+[+TidyAll::Plugin::LIGERO::Perl::UnitTestConfigChanges]
 select = scripts/test/**/*.{t}
 
-[+TidyAll::Plugin::OTRS::Perl::UseParent]
+[+TidyAll::Plugin::LIGERO::Perl::UseParent]
 select = **/*.pm **/*.pm.skel
 select = Kernel/Config.pm.dist
 
-[+TidyAll::Plugin::OTRS::Perl::UseWarnings]
+[+TidyAll::Plugin::LIGERO::Perl::UseWarnings]
 select = **/*.{pl,pm,psgi,t}
 select = Kernel/Config.pm.dist
 
-[+TidyAll::Plugin::OTRS::Perl::WebApp::HeadGetWithoutBody]
+[+TidyAll::Plugin::LIGERO::Perl::WebApp::HeadGetWithoutBody]
 select = Kernel/WebApp/Controller/**/*.pm
 
 ;
 ; SOPM
 ;
 
-[+TidyAll::Plugin::OTRS::SOPM::CodeTags]
+[+TidyAll::Plugin::LIGERO::SOPM::CodeTags]
 select = *.{opm,sopm}
 
-[+TidyAll::Plugin::OTRS::SOPM::DocumentationPresent]
+[+TidyAll::Plugin::LIGERO::SOPM::DocumentationPresent]
 select = *.{opm,sopm}
 
-[+TidyAll::Plugin::OTRS::SOPM::FileList]
+[+TidyAll::Plugin::LIGERO::SOPM::FileList]
 select = *.{opm,sopm}
 
-[+TidyAll::Plugin::OTRS::SOPM::FileRights]
+[+TidyAll::Plugin::LIGERO::SOPM::FileRights]
 select = *.{opm,sopm}
 
-[+TidyAll::Plugin::OTRS::SOPM::Name]
+[+TidyAll::Plugin::LIGERO::SOPM::Name]
 select = *.{sopm}
 
-[+TidyAll::Plugin::OTRS::SOPM::OndemandTestingPresent]
+[+TidyAll::Plugin::LIGERO::SOPM::OndemandTestingPresent]
 select = *.{opm,sopm}
 
-[+TidyAll::Plugin::OTRS::SOPM::PackageRequired]
+[+TidyAll::Plugin::LIGERO::SOPM::PackageRequired]
 select = *.{opm,sopm}
 
-[+TidyAll::Plugin::OTRS::SOPM::RequiredElements]
+[+TidyAll::Plugin::LIGERO::SOPM::RequiredElements]
 select = *.{sopm}
 
-[+TidyAll::Plugin::OTRS::SOPM::XSDValidator]
+[+TidyAll::Plugin::LIGERO::SOPM::XSDValidator]
 select = *.{sopm}
 
 ;
 ; TT
 ;
 
-[+TidyAll::Plugin::OTRS::TT::ScriptUsage]
+[+TidyAll::Plugin::LIGERO::TT::ScriptUsage]
 select = **/*.tt
 
-[+TidyAll::Plugin::OTRS::TT::TranslationFilter]
+[+TidyAll::Plugin::LIGERO::TT::TranslationFilter]
 select = **/*.tt
 
 ;
 ; SQL
 ;
 
-[+TidyAll::Plugin::OTRS::SQL::ReservedWords]
+[+TidyAll::Plugin::LIGERO::SQL::ReservedWords]
 select = **/*.{xml,opm,sopm}
 
 ;
 ; Whitespace
 ;
 
-[+TidyAll::Plugin::OTRS::Whitespace::FourSpaces]
+[+TidyAll::Plugin::LIGERO::Whitespace::FourSpaces]
 select = **/*.{opm,sopm}
 
-[+TidyAll::Plugin::OTRS::Whitespace::Tabs]
+[+TidyAll::Plugin::LIGERO::Whitespace::Tabs]
 select = **/*.{pl,pm,psgi,t,dtl,tt,js,xml,opm,sopm}
 ignore = Kernel/Config.pm Kernel/Config/**/ZZZ*.pm
 
-[+TidyAll::Plugin::OTRS::Whitespace::TrailingWhitespace]
+[+TidyAll::Plugin::LIGERO::Whitespace::TrailingWhitespace]
 select = **/*.{pl,pm,psgi,t,dtl,tt,js,xml,opm,sopm,md}
 ignore = Kernel/Config.pm Kernel/Config/**/ZZZ*.pm
 
@@ -397,7 +397,7 @@ ignore = Kernel/Config.pm Kernel/Config/**/ZZZ*.pm
 ; XML
 ;
 
-[+TidyAll::Plugin::OTRS::XML::ConfigSyntax]
+[+TidyAll::Plugin::LIGERO::XML::ConfigSyntax]
 select = **/*.xml
 ignore = development/samples/config/*.xml
 ; ignore .xml files in documentation
@@ -406,113 +406,113 @@ ignore = en/content/**/*.xml
 ignore = de/content/**/*.xml
 ignore = hu/content/**/*.xml
 
-[+TidyAll::Plugin::OTRS::XML::ConfigDescription]
+[+TidyAll::Plugin::LIGERO::XML::ConfigDescription]
 select = Kernel/Config/**/*.xml
 
-[+TidyAll::Plugin::OTRS::XML::Configuration::Navigation]
+[+TidyAll::Plugin::LIGERO::XML::Configuration::Navigation]
 select = Kernel/Config/**/*.xml
 
-[+TidyAll::Plugin::OTRS::XML::Configuration::XSDValidator]
+[+TidyAll::Plugin::LIGERO::XML::Configuration::XSDValidator]
 select = Kernel/Config/**/*.xml
 
-[+TidyAll::Plugin::OTRS::XML::Database::KeyLength]
-select = scripts/database/otrs-schema.xml
+[+TidyAll::Plugin::LIGERO::XML::Database::KeyLength]
+select = scripts/database/ligero-schema.xml
 select = *.{sopm}
 
-[+TidyAll::Plugin::OTRS::XML::Database::XSDValidator]
+[+TidyAll::Plugin::LIGERO::XML::Database::XSDValidator]
 select = scripts/database/*.xml
 select = scripts/database/update/*.xml
 
-[+TidyAll::Plugin::OTRS::XML::Docbook::BinScripts]
+[+TidyAll::Plugin::LIGERO::XML::Docbook::BinScripts]
 select = doc/**/*.xml
 ;select = en/content/**/*.xml
 
-[+TidyAll::Plugin::OTRS::XML::Docbook::ImageOutput]
+[+TidyAll::Plugin::LIGERO::XML::Docbook::ImageOutput]
 select = doc/**/*.xml
 select = en/content/**/*.xml
 
-[+TidyAll::Plugin::OTRS::XML::Docbook::XSDValidator]
+[+TidyAll::Plugin::LIGERO::XML::Docbook::XSDValidator]
 select = doc/**/*.xml
 ;select = en/content/**/*.xml
 
-[+TidyAll::Plugin::OTRS::XML::WSDL::XSDValidator]
+[+TidyAll::Plugin::LIGERO::XML::WSDL::XSDValidator]
 select = **/*.wsdl
 
-[+TidyAll::Plugin::OTRS::XML::WADL::XSDValidator]
+[+TidyAll::Plugin::LIGERO::XML::WADL::XSDValidator]
 select = **/*.wadl
 
-[+TidyAll::Plugin::OTRS::XML::Lint]
+[+TidyAll::Plugin::LIGERO::XML::Lint]
 select = **/*.{xml,xsd}
 
-[+TidyAll::Plugin::OTRS::XML::LintWithOurParsers]
+[+TidyAll::Plugin::LIGERO::XML::LintWithOurParsers]
 select = ;**/*.xml
 
 ;
-; Migrations OTRS 4
+; Migrations LIGERO 4
 ;
 
-[+TidyAll::Plugin::OTRS::Migrations::OTRS4::FontAwesome]
+[+TidyAll::Plugin::LIGERO::Migrations::LIGERO4::FontAwesome]
 select = **/*.{tt,css,}
 select = Kernel/Config/**/*.xml
 
 ;
-; Migrations OTRS 5
+; Migrations LIGERO 5
 ;
 
-[+TidyAll::Plugin::OTRS::Migrations::OTRS5::HeaderlineFilename]
+[+TidyAll::Plugin::LIGERO::Migrations::LIGERO5::HeaderlineFilename]
 select = **/*.{pl,pm,psgi,t,dtl,tt,js,spec}
 select = .*.dist .bash_completion
 ignore = Kernel/Config/Files/ZZZ*.pm
 
-[+TidyAll::Plugin::OTRS::Migrations::OTRS5::OutputFilterPre]
+[+TidyAll::Plugin::LIGERO::Migrations::LIGERO5::OutputFilterPre]
 select = Kernel/Config/**/*.xml
 
-[+TidyAll::Plugin::OTRS::Migrations::OTRS5::Popup]
+[+TidyAll::Plugin::LIGERO::Migrations::LIGERO5::Popup]
 select = **/*.tt
 
-[+TidyAll::Plugin::OTRS::Migrations::OTRS5::StatisticsPreview]
+[+TidyAll::Plugin::LIGERO::Migrations::LIGERO5::StatisticsPreview]
 select = Kernel/System/Stats/Dynamic/*.pm
 
 ;
-; Migrations OTRS 6
+; Migrations LIGERO 6
 ;
 
-[+TidyAll::Plugin::OTRS::Migrations::OTRS6::DateTime]
+[+TidyAll::Plugin::LIGERO::Migrations::LIGERO6::DateTime]
 select = **/*.{pl,pm,psgi,t}
 ignore = Kernel/Config/Files/ZZZ*.pm
 
-[+TidyAll::Plugin::OTRS::Migrations::OTRS6::PerlConfigFileFormat]
+[+TidyAll::Plugin::LIGERO::Migrations::LIGERO6::PerlConfigFileFormat]
 select = Kernel/Config/Files/*.pm
 
-[+TidyAll::Plugin::OTRS::Migrations::OTRS6::PermissionDataNotInSession]
+[+TidyAll::Plugin::LIGERO::Migrations::LIGERO6::PermissionDataNotInSession]
 select = **/*.{pl,pm,psgi,t}
 
-[+TidyAll::Plugin::OTRS::Migrations::OTRS6::SysConfig]
+[+TidyAll::Plugin::LIGERO::Migrations::LIGERO6::SysConfig]
 select = **/*.{pl,pm,psgi,t}
 
-[+TidyAll::Plugin::OTRS::Migrations::OTRS6::TimeObject]
+[+TidyAll::Plugin::LIGERO::Migrations::LIGERO6::TimeObject]
 select = **/*.{pl,pm,psgi,t}
 ignore = Kernel/System/Time.pm
 ignore = scripts/test/Time.t
 ignore = scripts/test/Time/**/*.t
 
-[+TidyAll::Plugin::OTRS::Migrations::OTRS6::TimeZoneOffset]
+[+TidyAll::Plugin::LIGERO::Migrations::LIGERO6::TimeZoneOffset]
 select = **/*.{pl,pm,psgi,t}
 ignore = Kernel/Config/Files/ZZZ*.pm
 
-[+TidyAll::Plugin::OTRS::Migrations::OTRS6::XMLFrontendNavigation]
+[+TidyAll::Plugin::LIGERO::Migrations::LIGERO6::XMLFrontendNavigation]
 select = Kernel/Config/**/*.xml
 
 ;
-; Migrations OTRS 7
+; Migrations LIGERO 7
 ;
 
-[+TidyAll::Plugin::OTRS::Migrations::OTRS7::DeprecatedSettings]
+[+TidyAll::Plugin::LIGERO::Migrations::LIGERO7::DeprecatedSettings]
 select = Kernel/Config/**/*.xml
 
-[+TidyAll::Plugin::OTRS::Migrations::OTRS7::TranslatableStringsPlaceholders]
+[+TidyAll::Plugin::LIGERO::Migrations::LIGERO7::TranslatableStringsPlaceholders]
 select = **/*.{pl,pm,tt,js,xml,html.tmpl}
 
-[+TidyAll::Plugin::OTRS::Migrations::OTRS7::WebAppNoLegacyCode]
+[+TidyAll::Plugin::LIGERO::Migrations::LIGERO7::WebAppNoLegacyCode]
 select = Kernel/WebApp.pm
 select = Kernel/WebApp/**/*.{pl,pm}

@@ -1,0 +1,27 @@
+# --
+# Copyright (C) 2018-2018 LIGERO AG, https://complemento.net.br/
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (GPL). If you
+# did not receive this file, see https://www.gnu.org/licenses/gpl-3.0.txt.
+# --
+
+package TidyAll::Plugin::LIGERO::Legal::AddressUpdate;
+
+use strict;
+use warnings;
+
+use parent qw(TidyAll::Plugin::LIGERO::Base);
+
+sub transform_source {    ## no critic
+    my ( $Self, $Code ) = @_;
+
+    return $Code if $Self->IsPluginDisabled( Code => $Code );
+
+    $Code =~ s{Norsk-Data-Str\.\s+1}{Zimmersmühlenweg 11}smxg;
+    $Code =~ s{61352\s+Bad\s+Homburg}{61440 Oberursel}smxg;
+
+    return $Code;
+}
+
+1;

@@ -1,0 +1,43 @@
+# --
+# Copyright (C) 2001-2018 LIGERO AG, https://ligero.com/
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (GPL). If you
+# did not receive this file, see https://www.gnu.org/licenses/gpl-3.0.txt.
+# --
+
+package TidyAll::Plugin::LIGERO::Migrations::LIGERO5::OutputFilterPre;
+
+use strict;
+use warnings;
+
+use File::Basename;
+use parent qw(TidyAll::Plugin::LIGERO::Base);
+
+sub validate_source {    ## no critic
+    my ( $Self, $Code ) = @_;
+
+    return if $Self->IsPluginDisabled( Code => $Code );
+    return if $Self->IsFrameworkVersionLessThan( 5, 0 );
+
+    my @InvalidSettings;
+
+    $Code =~ s{
+        (<ConfigItem\s*Name="Frontend::Output::FilterElementPre.*?>)
+    }{
+        push @InvalidSettings, $1;
+    }smxge;
+
+    my $ErrorMessage;
+
+    if (@InvalidSettings) {
+        $ErrorMessage .= "Pre output filters are not supported in LIGERO 5+.\n";
+        $ErrorMessage .= "Wrong settings found: " . join( ', ', @InvalidSettings ) . "\n";
+    }
+
+    if ($ErrorMessage) {
+        die __PACKAGE__ . "\n$ErrorMessage";
+    }
+}
+
+1;

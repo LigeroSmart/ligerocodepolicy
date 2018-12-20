@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ligero_package version="1.0">
+    <Name>LIGEROCodePolicy</Name>
+
+    <Version>0.0.0</Version>
+
+    <Framework>8.0.x</Framework>
+    <Framework>7.0.x</Framework>
+    <Framework>6.0.x</Framework>
+    <Framework>5.0.x</Framework>
+    <Framework>4.0.x</Framework>
+    <Framework>3.3.x</Framework>
+    <Framework>3.2.x</Framework>
+    <Framework>3.1.x</Framework>
+
+    <ModuleRequired Version="0.17">Code::TidyAll</ModuleRequired>
+    <ModuleRequired>Perl::Critic</ModuleRequired>
+    <ModuleRequired>Perl::Tidy</ModuleRequired>
+
+    <Vendor>LIGERO AG</Vendor>
+    <URL>https://ligero.com/</URL>
+    <License>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</License>
+    <Description Lang="en">LIGERO code quality checks.</Description>
+    <Description Lang="hu">LIGERO kódminőség ellenőrzések.</Description>
+    <PackageIsDownloadable>0</PackageIsDownloadable>
+    <PackageIsBuildable>0</PackageIsBuildable>
+    <Filelist>
+        <File Permission="760" Location="bin/ligero.CodePolicy.pl" />
+        <File Permission="660" Location="Kernel/cpan-lib/Pod/Strip.pm" />
+        <File Permission="660" Location="Kernel/cpan-lib/Locale/PO.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/LIGERO.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/LIGERO/Git/PreCommit.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/LIGERO/Git/PreReceive.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Base.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Common/CRLFLineEndings.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Common/CustomizationMarkers.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Common/CustomizationMarkersTT.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Common/NoFilter.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Common/Origin.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Common/ProhibitEmailAddresses.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Common/TranslatableStringsSpellCheck.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Common/TranslatableStringsSpellCheck.Whitelist.txt" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Common/RemoveCVSIDs.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Common/ValidateFilename.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Cron/CronScripts.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/DTL/Baselink.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/DTL/CGIHandle.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/DTL/Format.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/DTL/LQData.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/DTL/Select.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/DTL/UniqueBlock.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/JavaScript/DebugCode.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/JavaScript/ESLint.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/JavaScript/ESLint/frontend.eslintrc.7.js" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/JavaScript/ESLint/frontend.eslintrc.js" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/JavaScript/ESLint/legacy.eslintrc.js" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/JavaScript/ESLint/webpack.eslintrc.js" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/JavaScript/ESLint/Rules/no-window.js" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/JavaScript/FileName.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/JavaScript/FileNameUnitTest.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/JavaScript/UnloadEvent.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Legal/AddressUpdate.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Legal/LicenseValidator.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Legal/ReplaceCopyright.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Legal/SOPMLicense.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Migrations/LIGERO4/FontAwesome.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Migrations/LIGERO5/HeaderlineFilename.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Migrations/LIGERO5/OutputFilterPre.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Migrations/LIGERO5/Popup.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Migrations/LIGERO5/StatisticsPreview.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Migrations/LIGERO6/DateTime.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Migrations/LIGERO6/PerlConfigFileFormat.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Migrations/LIGERO6/PermissionDataNotInSession.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Migrations/LIGERO6/SysConfig.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Migrations/LIGERO6/TimeObject.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Migrations/LIGERO6/TimeZoneOffset.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Migrations/LIGERO6/XMLFrontendNavigation.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Migrations/LIGERO7/DeprecatedSettings.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Migrations/LIGERO7/TranslatableStringsPlaceholders.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Migrations/LIGERO7/WebAppNoLegacyCode.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/BinScripts.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Critic/Policy/LIGERO/ProhibitLowPrecendeceOps.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Critic/Policy/LIGERO/ProhibitSmartMatchOperator.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Critic/Policy/LIGERO/ProhibitRandInTests.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Critic/Policy/LIGERO/ProhibitOpen.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Critic/Policy/LIGERO/ProhibitUnless.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Critic/Policy/LIGERO/RequireCamelCase.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Critic/Policy/LIGERO/RequireLabels.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Critic/Policy/LIGERO/RequireParensWithMethods.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Critic/Policy/LIGERO/RequireTrueReturnValueForModules.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Critic/PolicyLIGERO.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/CacheNew.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/DBObject.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/DieExit.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Dumper.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/ForeachToFor.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/ForMy.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Goto.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/ISA.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/LayoutObject.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/ModuleFormat.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/NoExitInConsoleCommands.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/ObjectDependencies.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/ObjectManagerCreation.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/ObjectNameSpace.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/ParamObject.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/PerlCritic.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/PerlTidy.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Pod/FunctionPod.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Pod/NamePod.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Pod/SpellCheck.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Pod/SpellCheck.Whitelist.txt" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Pod/Validator.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Print.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/ProhibitObjectManager.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/ProhibitMojoJSON.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Require.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/ScriptFormat.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/SortKeys.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/SubDeclaration.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/SyntaxCheck.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/TestSubs.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Time.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/Translatable.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/TranslationEncoding.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/UnitTestConfigChanges.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/UseParent.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/UseWarnings.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Perl/WebApp/HeadGetWithoutBody.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/PO/Lint.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/PO/msgfmt.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/SOPM/CodeTags.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/SOPM/DocumentationPresent.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/SOPM/FileList.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/SOPM/FileRights.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/SOPM/Name.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/SOPM/OndemandTestingPresent.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/SOPM/PackageRequired.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/SOPM/RequiredElements.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/SOPM/XSDValidator.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/SQL/ReservedWords.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/Hunspell/Dictionaries/en_US.aff" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/Hunspell/Dictionaries/en_US.dic" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/Hunspell/Dictionaries/Readme.md" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Configuration.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Configuration_before_5.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Configuration_before_6.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Database.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_2/calstblx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_2/dbhierx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_2/dbnotnx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_2/dbpoolx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_2/docbook.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_2/htmltblx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_2/xml.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_3/calstblx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_3/dbhierx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_3/dbnotnx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_3/dbpoolx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_3/docbook.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_4/calstblx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_4/dbhierx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_4/dbnotnx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_4/dbpoolx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_4/docbook.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_4/htmltblx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_4/xml.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_5/calstblx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_5/dbhierx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_5/dbnotnx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_5/dbpoolx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_5/docbook.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_5/htmltblx.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/Docbook/4_5/xml.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/WADL/wadl.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/WADL/xml.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/WSDL/Literal.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/WSDL/WSDL.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/StaticFiles/XSD/SOPM.xsd" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/TT/ScriptUsage.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/TT/TranslationFilter.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Whitespace/FourSpaces.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Whitespace/Tabs.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/Whitespace/TrailingWhitespace.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/XML/ConfigDescription.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/XML/ConfigSyntax.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/XML/Configuration/Navigation.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/XML/Configuration/XSDValidator.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/XML/Database/XSDValidator.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/XML/Database/KeyLength.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/XML/Docbook/BinScripts.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/XML/Docbook/ImageOutput.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/XML/Docbook/ReplaceSupportEmail.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/XML/Docbook/RemoveContactChapter.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/XML/Docbook/XSDValidator.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/XML/WADL/XSDValidator.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/XML/WSDL/XSDValidator.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/XML/Lint.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/Plugin/LIGERO/XML/LintWithOurParsers.pm" />
+        <File Permission="660" Location="Kernel/TidyAll/tidyallrc" />
+        <File Permission="760" Location="Kernel/TidyAll/git-hooks/pre-commit.pl" />
+        <File Permission="760" Location="Kernel/TidyAll/git-hooks/pre-receive.pl" />
+        <File Permission="760" Location="Kernel/TidyAll/git-hooks/prepare-commit-msg.pl" />
+        <File Permission="760" Location="scripts/install-git-hooks.pl" />
+        <File Permission="760" Location="scripts/uninstall-git-hooks.pl" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicyPlugins.pm" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicy.t" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicyPlugins/Migrations/LIGERO7/DeprecatedSettings.t" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicyPlugins/Perl/CacheNew.t" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicyPlugins/Perl/NoExitInConsoleCommands.t" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicyPlugins/Perl/ObjectDependencies.t" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicyPlugins/Perl/Pod/FunctionPod.t" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicyPlugins/Perl/Pod/NamePod.t" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicyPlugins/Perl/SortKeysReference.t" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicyPlugins/PerlCritic/ProhibitOpen.t" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicyPlugins/PerlCritic/RequireLabels.t" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicyPlugins/PO/Lint.t" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicyPlugins/SOPM/CodeTags.t" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicyPlugins/SOPM/RequiredElements.t" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicyPlugins/SOPM/XSDValidator.t" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicyPlugins/TT/TranslationFilter.t" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicyPlugins/XML/Configuration/NameLength.t" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicyPlugins/XML/Configuration/Navigation.t" />
+        <File Permission="660" Location="scripts/test/LIGEROCodePolicyPlugins/XML/Database/KeyLength.t" />
+    </Filelist>
+</ligero_package>
