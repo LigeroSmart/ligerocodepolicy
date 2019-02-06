@@ -1,4 +1,6 @@
-package Perl::Critic::Policy::LIGERO::RequireTrueReturnValueForModules;
+# Modified version of the work: Copyright (C) 2019 Ligero, https://www.complemento.net.br/
+# based on the original work of:
+# Copyright (C) 2001-2018 OTRS AG, https://otrs.com/package Perl::Critic::Policy::LIGERO::RequireTrueReturnValueForModules;
 
 ## nofilter(TidyAll::Plugin::LIGERO::Common::HeaderlineFilename)
 ## nofilter(TidyAll::Plugin::LIGERO::Legal::ReplaceCopyright)
